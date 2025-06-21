@@ -10,6 +10,7 @@ int main() {
     log->pedirCredenciales();
     cout<<"Hello"<<endl;
     cout<<"lolxd"<<endl;
+    cout<<"Hello"<<endl;
     return 0;
 
 

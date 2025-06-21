@@ -1,6 +1,6 @@
 #include"SistemaControlador.h"
 #include <string>
-#include "../Logica/dominio/Sistema.h"
+#include "../dominio/Sistema.h"
 SistemaControlador::SistemaControlador() {
     //siempre que instancio un controlador, intancio sus dependencias
     ///en este caso la clase Sistema.
