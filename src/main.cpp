@@ -8,9 +8,6 @@ int main() {
 
     Login * log = new Login();
     log->pedirCredenciales();
-    cout<<"Hello"<<endl;
-    cout<<"lolxd"<<endl;
-    cout<<"Hello"<<endl;
     return 0;
 
 
