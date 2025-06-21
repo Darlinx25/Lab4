@@ -1,8 +1,8 @@
 #include "Login.h"
 #include <iostream>
 #include <string>
-#include "/home/faxcundo/Downloads/ICollection/Lab4/Logica/controlador/SistemaControlador.h"
-#include "/home/faxcundo/Downloads/ICollection/Lab4/Logica/interfaceSistema/ISistema.h"
+#include "../Logica/controlador/SistemaControlador.h"
+#include "../Logica/interfaceSistema/ISistema.h"
 using namespace std;
 
 Login::Login() {

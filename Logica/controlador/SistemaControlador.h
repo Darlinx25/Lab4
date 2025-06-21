@@ -1,8 +1,8 @@
 #ifndef LOGICA_CONTROLADOR_SISTEMACONTROLADOR_H_
 #define LOGICA_CONTROLADOR_SISTEMACONTROLADOR_H_
 #include <string>
-#include "/home/faxcundo/Downloads/ICollection/Lab4/Logica/interfaceSistema/ISistema.h"
-#include "/home/faxcundo/Downloads/ICollection/Lab4/Logica/dominio/Sistema.h"
+#include "../Logica/interfaceSistema/ISistema.h"
+#include "../Logica/dominio/Sistema.h"
 
 class SistemaControlador : public ISistema{
 private:
