@@ -1,0 +1,12 @@
+# Carpetas temporales de CLion y CMake
+.idea/
+cmake-build-debug/
+cmake-build-release/
+
+# Archivos generados
+*.o
+*.obj
+*.exe
+*.log
+*.tmp
+
