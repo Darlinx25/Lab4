@@ -10,7 +10,8 @@
 
 
 Sistema::Sistema() {
-
+//Cliente(string nick, string pass, DTFecha * fechaNac, DTDomicilio * dominac, string ciudad )
+//// Vendedor(string nick, string pass, DTFecha * fechaNac, int RUT);
     //usuarios.push_back(new Usuario("pepe","111"));
     //usuarios.push_back(new Usuario("luis","222"));
     //usuarios.push_back(new Usuario("faxcundo","fax"));

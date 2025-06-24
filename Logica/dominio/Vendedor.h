@@ -12,5 +12,7 @@ class Vendedor:public Usuario {
         int RUT;
         //HACER PUNTERO A PRODUCTOS
     public:
+        Vendedor(string nick, string pass, DTFecha * fechaNac, int RUT);
+        ~Vendedor();
 };
 #endif //VENDEDOR_H
