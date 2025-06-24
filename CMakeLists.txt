@@ -18,4 +18,6 @@ file(GLOB_RECURSE SOURCE_FILES
         presentacion/*.cpp
 )
 
-add_executable(Lab4 ${SOURCE_FILES})
+add_executable(Lab4 ${SOURCE_FILES}
+        menu/menu.h
+        menu/menu.cpp)

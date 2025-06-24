@@ -17,6 +17,8 @@ void Login::pedirCredenciales() {
     //por lo tanto el desacoplamiento que tenemos es un bajo
     //mojoraremos esto utilizando el patrón Factory en futuras versiones
     ISistema *iSistema = new SistemaControlador();
+
+
     string nick, pass;
     cout << " ** Login ** " << endl;
     cout << "Ingrese nick: ";
@@ -25,4 +27,5 @@ void Login::pedirCredenciales() {
     cout << "Ingrese pass: ";
     cin >> pass;
     cout << iSistema->ingresar(nick, pass);
+
 }
