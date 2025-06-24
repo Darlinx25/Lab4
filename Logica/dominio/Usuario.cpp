@@ -1,13 +1,7 @@
 #include "Usuario.h"
 #include <iostream>
 
-Usuario::Usuario(string nick, string pass) {
-
-
-    this->nick = nick;
-
-
-    this->pass = pass;
+Usuario::Usuario() {
 
 
 }
@@ -61,4 +55,15 @@ bool Usuario::estaBloqueado() {
     else return false;
 
 
+}
+
+
+void Usuario::setnick(string nick) {
+    this->nick = nick;
+}
+void Usuario::setpass(string pass) {
+    this->pass = pass;
+}
+void Usuario::setFechaNac(DTFecha * fechaNac) {
+    this->fechaNac = fechaNac;
 }

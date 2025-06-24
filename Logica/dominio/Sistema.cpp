@@ -11,9 +11,9 @@
 
 Sistema::Sistema() {
 
-    usuarios.push_back(new Usuario("pepe","111"));
-    usuarios.push_back(new Usuario("luis","222"));
-    usuarios.push_back(new Usuario("faxcundo","fax"));
+    //usuarios.push_back(new Usuario("pepe","111"));
+    //usuarios.push_back(new Usuario("luis","222"));
+    //usuarios.push_back(new Usuario("faxcundo","fax"));
 }
 
 

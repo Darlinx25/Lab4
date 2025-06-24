@@ -20,4 +20,12 @@ file(GLOB_RECURSE SOURCE_FILES
 
 add_executable(Lab4 ${SOURCE_FILES}
         menu/menu.h
-        menu/menu.cpp)
+        menu/menu.cpp
+        Logica/dominio/DTFecha.h
+        Logica/dominio/Cliente.h
+        Logica/dominio/DTDomicilio.h
+        Logica/dominio/DTFecha.cpp
+        Logica/dominio/Cliente.cpp
+        Logica/dominio/DTDomicilio.cpp
+        Logica/dominio/Vendedor.h
+        Logica/dominio/Vendedor.cpp)
