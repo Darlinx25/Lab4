@@ -1,9 +1,12 @@
 #ifndef LOGICA_USUARIO_H_
 #define LOGICA_USUARIO_H_
 #include <iostream>
-#include "DTFecha.h"
-using namespace std;
+#include <set>
 
+#include "DTFecha.h"
+#include "DTUsuario.h"
+using namespace std;
+class DTUsuario;
 class Usuario {
     protected:
     string nick;
@@ -21,6 +24,8 @@ public:
     void setnick(string nick);
     void setpass(string pass);
     void setFechaNac(DTFecha * fechaNac);
+    virtual DTUsuario * getDT()=0;
+
 
 
 };

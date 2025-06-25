@@ -7,11 +7,12 @@
 #include <iostream>
 using namespace std;
 class DTFecha {
-    private:
+private:
     int dia;
     int mes;
     int anio;
-    public:
+
+public:
     ~DTFecha();
     DTFecha(int dia, int mes, int anio);
     int getDia();

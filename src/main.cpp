@@ -2,15 +2,19 @@
 #include "../presentacion/Login.h"
 #include "../Logica/dominio/Usuario.h"
 #include "../menu/menu.h"
+#include "../Logica/dominio/Usuario.h"
+#include "../Logica/dominio/Sistema.h"
+#include "../Logica/dominio/Cliente.h"
 
 
 
 int main() {
 
-
+    list<DTUsuario> usuarioss;
     Login * log = new Login();
     log->pedirCredenciales();
-    Menu();
+    log->listarUsuarios();
+    //Menu();
     return 0;
 
 

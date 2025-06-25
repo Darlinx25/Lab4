@@ -11,6 +11,7 @@ public:
     SistemaControlador();
     virtual ~SistemaControlador();
     virtual string ingresar(string nick, string pass);
+    virtual set<DTUsuario*> listarUsuarios();
 };
 
 #endif /* LOGICA_CONTROLADOR_SISTEMACONTROLADOR_H_ */

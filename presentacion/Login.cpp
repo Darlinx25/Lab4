@@ -29,3 +29,15 @@ void Login::pedirCredenciales() {
     cout << iSistema->ingresar(nick, pass);
 
 }
+
+void Login::listarUsuarios()
+{
+    set<DTUsuario*> lista;
+    ISistema *iSistema = new SistemaControlador();
+    lista = iSistema->listarUsuarios();
+    for (int i = 0; i < lista.size(); i++)
+    {
+        //cout<<lista
+
+    }
+}

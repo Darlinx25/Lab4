@@ -11,9 +11,9 @@ using namespace std;
 class Cliente:public Usuario {
     private:
         DTDomicilio * direccion;
-        string ciudad;
     public:
-    Cliente(string nick, string pass, DTFecha * fechaNac, DTDomicilio * dominac, string ciudad );
+    Cliente(string nick, string pass, DTFecha * fechaNac, DTDomicilio * dominac);
     ~Cliente();
+    DTUsuario * getDT();
 };
 #endif //CLIENTE_H

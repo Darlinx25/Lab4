@@ -67,3 +67,5 @@ void Usuario::setpass(string pass) {
 void Usuario::setFechaNac(DTFecha * fechaNac) {
     this->fechaNac = fechaNac;
 }
+
+

@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Vendedor.h"
+
+#include "DTVendedor.h"
 using namespace std;
 
 Vendedor::Vendedor(string nick, string pass, DTFecha * fechaNac, int RUT) {
@@ -14,3 +16,9 @@ Vendedor::~Vendedor() {
 
 }
 
+DTUsuario * Vendedor::getDT()
+{
+    return new DTVendedor(this->nick,this->fechaNac,this->RUT);
+
+
+}

@@ -16,3 +16,8 @@ string SistemaControlador::ingresar(string nick, string pass) {
     //"orquestador", por ahor lo mantemos simple.
     return this->sistema->ingresar(nick, pass);
 }
+
+set<DTUsuario*> SistemaControlador::listarUsuarios()
+{
+    return this->sistema->listarUsuarios();
+}

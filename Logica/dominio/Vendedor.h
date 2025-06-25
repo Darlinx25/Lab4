@@ -8,11 +8,13 @@
 #include "Usuario.h"
 using namespace std;
 class Vendedor:public Usuario {
-    private:
-        int RUT;
-        //HACER PUNTERO A PRODUCTOS
-    public:
-        Vendedor(string nick, string pass, DTFecha * fechaNac, int RUT);
-        ~Vendedor();
+private:
+    int RUT;
+    //HACER PUNTERO A PRODUCTOS
+public:
+    Vendedor(string nick, string pass, DTFecha * fechaNac, int RUT);
+    ~Vendedor();
+    DTUsuario * getDT();
+
 };
 #endif //VENDEDOR_H

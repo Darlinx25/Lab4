@@ -29,4 +29,10 @@ add_executable(Lab4 ${SOURCE_FILES}
         Logica/dominio/DTDomicilio.cpp
         Logica/dominio/Vendedor.h
         Logica/dominio/Vendedor.cpp
-        Logica/dominio/Producto.h)
+        Logica/dominio/Producto.h
+        Logica/dominio/DTCliente.cpp
+        Logica/dominio/DTCliente.h
+        Logica/dominio/DTVendedor.h
+        Logica/dominio/DTUsuario.cpp
+        Logica/dominio/DTVendedor.cpp
+)
