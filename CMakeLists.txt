@@ -9,6 +9,8 @@ include_directories(
         Logica/dominio
         Logica/interfaceSistema
         presentacion
+        ICollection/interfaces
+        ICollection/collections
 )
 
 # Buscar todos los .cpp automáticamente (recomendado para trabajo en equipo)
@@ -16,6 +18,8 @@ file(GLOB_RECURSE SOURCE_FILES
         src/*.cpp
         Logica/**/*.cpp
         presentacion/*.cpp
+        ICollection/interfaces/*.cpp
+        ICollection/collections/*.cpp
 )
 
 add_executable(Lab4 ${SOURCE_FILES}
