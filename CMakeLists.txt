@@ -9,6 +9,7 @@ include_directories(
         Logica/dominio
         Logica/interfaceSistema
         presentacion
+        menu
         ICollection
         ICollection/interfaces
         ICollection/collections
@@ -19,6 +20,7 @@ file(GLOB_RECURSE SOURCE_FILES
         src/*.cpp
         Logica/**/*.cpp
         presentacion/*.cpp
+        menu/*.cpp
         ICollection/*.cpp
         ICollection/interfaces/*.cpp
         ICollection/collections/*.cpp
