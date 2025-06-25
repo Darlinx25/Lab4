@@ -1,35 +1,29 @@
-/* 
- * File:   String.h
- * Author: igui
- *
- * Created on 29 de mayo de 2011, 06:53 PM
- */
-
 #ifndef STRING_H
 #define STRING_H
+
+#include <cstddef>
 #include "../../ICollection/interfaces/ICollectible.h"
 #include "../../ICollection/interfaces/OrderedKey.h"
 
 /**
- *  Implementación simple del datatype String que hereda tanto de ICollectible
- *  como de HashedKey
+ * Implementación simple del datatype String que hereda tanto de ICollectible
+ * como de OrderedKey.
  */
-class String: public ICollectible, public OrderedKey
-{
+class String : public ICollectible, public OrderedKey {
 private:
-    char *s;
+    char* s;
 public:
-    // construye el Datatype a partir de un puntero a caracter
-    String(const char *s = "");
-    
-    // da el valor del string
-    const char *getValue() const;
-    
-    ComparisonRes compare(OrderedKey *k) const;
-    
+    // Construye el String a partir de un puntero a caracter
+    String(const char* s = "");
+
+    // Devuelve el valor del string
+    const char* getValue() const;
+
+    // Compara dos OrderedKey (override del método virtual puro)
+    ComparisonRes compare(OrderedKey* k) const override;
+
+    // Destructor
     virtual ~String();
-    
 };
 
-#endif	/* PROG4_STRING_H */
-
+#endif // STRING_H
