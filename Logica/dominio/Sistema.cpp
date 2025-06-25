@@ -3,7 +3,7 @@
 
 
 
-#include <list>
+
 #include  "Usuario.h"
 #include "Cliente.h"
 #include "DTDomicilio.h"
@@ -22,23 +22,13 @@ Sistema::Sistema() {
     //usuarios.push_back(new Usuario("luis","222"));
     //usuarios.push_back(new Usuario("faxcundo","fax"));
 
-    String * clave = new String(c->getNick().c_str());
-    this->usuarios->add(clave,c);
-    this->usuarios = new OrderedDictionary();
+    this->usuarios->add(new String(c->getNick().c_str()),c);
 }
 
 
 Sistema::~Sistema() {
-
-
     // TODO Auto-generated destructor stubf
-
-
 }
-
-
-
-
 
 string Sistema::ingresar(string nick, string pass) {
     string mensajeRetorno = "*** Usuario o contrasenia incorrecto";
