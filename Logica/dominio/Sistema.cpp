@@ -4,20 +4,26 @@
 
 
 #include <list>
-
+#include  "Usuario.h"
 #include "Cliente.h"
 #include "DTDomicilio.h"
 #include "DTFecha.h"
 #include "../../ICollection/collections/OrderedDictionary.h"
+#include "../../ICollection/String.h"
 
 
 Sistema::Sistema() {
-//Usuario * c = new Cliente("faxcundo", "fax", new DTFecha(13,07,2003), new DTDomicilio("Maldonado","Uruguay"));
+
+    this->usuarios = new OrderedDictionary();
+    Usuario * c = new Cliente("faxcundo", "fax", new DTFecha(13,07,2003), new DTDomicilio("Maldonado","Uruguay"));
 //// Vendedor(string nick, string pass, DTFecha * fechaNac, int RUT);
     //usuarios.push_back(c);
     //usuarios.push_back(new Usuario("pepe","111"));
     //usuarios.push_back(new Usuario("luis","222"));
     //usuarios.push_back(new Usuario("faxcundo","fax"));
+
+    String * clave = new String(c->getNick().c_str());
+    this->usuarios->add(clave,c);
     this->usuarios = new OrderedDictionary();
 }
 
@@ -25,7 +31,7 @@ Sistema::Sistema() {
 Sistema::~Sistema() {
 
 
-    // TODO Auto-generated destructor stub
+    // TODO Auto-generated destructor stubf
 
 
 }

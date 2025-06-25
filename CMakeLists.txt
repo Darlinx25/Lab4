@@ -3,40 +3,30 @@ project(Lab4)
 
 set(CMAKE_CXX_STANDARD 20)
 
-# Indicamos las carpetas donde están los .h
+# Incluye carpetas con headers
 include_directories(
         Logica/controlador
         Logica/dominio
         Logica/interfaceSistema
         presentacion
+        ICollection
         ICollection/interfaces
         ICollection/collections
 )
 
-# Buscar todos los .cpp automáticamente (recomendado para trabajo en equipo)
+# Buscar todos los .cpp automáticamente
 file(GLOB_RECURSE SOURCE_FILES
         src/*.cpp
         Logica/**/*.cpp
         presentacion/*.cpp
+        ICollection/*.cpp
         ICollection/interfaces/*.cpp
         ICollection/collections/*.cpp
 )
 
-add_executable(Lab4 ${SOURCE_FILES}
-        menu/menu.h
-        menu/menu.cpp
-        Logica/dominio/DTFecha.h
-        Logica/dominio/Cliente.h
-        Logica/dominio/DTDomicilio.h
-        Logica/dominio/DTFecha.cpp
-        Logica/dominio/Cliente.cpp
-        Logica/dominio/DTDomicilio.cpp
-        Logica/dominio/Vendedor.h
-        Logica/dominio/Vendedor.cpp
-        Logica/dominio/Producto.h
-        Logica/dominio/DTCliente.cpp
-        Logica/dominio/DTCliente.h
-        Logica/dominio/DTVendedor.h
-        Logica/dominio/DTUsuario.cpp
-        Logica/dominio/DTVendedor.cpp
-)
+# Crear el ejecutable
+add_executable(Lab4 ${SOURCE_FILES})
+
+# Especificar la ruta completa a String.cpp en caso de que no se esté incluyendo correctamente
+# (opcional, solo si sigue fallando con el GLOB)
+# target_sources(Lab4 PRIVATE ICollection/String.cpp)

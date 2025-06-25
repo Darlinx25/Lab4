@@ -13,7 +13,7 @@ int main() {
     list<DTUsuario> usuarioss;
     Login * log = new Login();
     log->pedirCredenciales();
-    log->listarUsuarios();
+    //log->listarUsuarios();
     //Menu();
     return 0;
 

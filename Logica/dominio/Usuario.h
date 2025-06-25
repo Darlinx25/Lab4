@@ -5,9 +5,10 @@
 
 #include "DTFecha.h"
 #include "DTUsuario.h"
+#include "../../ICollection/interfaces/ICollectible.h"
 using namespace std;
 class DTUsuario;
-class Usuario {
+class Usuario:public ICollectible{
     protected:
     string nick;
     string pass;
