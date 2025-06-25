@@ -1,37 +1,34 @@
-#include <stddef.h>
+#include <cstddef>
 #include <stdexcept>
-#include <string.h>
+#include <cstring>    // moderno y portable
 #include "String.h"
 
-
-String::String(const char* str){
-    if(str == NULL)
+String::String(const char* str) {
+    if (str == nullptr)
         throw std::invalid_argument("str es NULL");
-        
-    int strSize = strlen(str);
-    s = strcpy(new char[strSize+1], str);
+
+    int strSize = std::strlen(str);
+    s = std::strcpy(new char[strSize + 1], str);
 }
 
-ComparisonRes String::compare(OrderedKey* k) const
-{
-    String *str = dynamic_cast<String *>(k);
-    if(str == NULL) 
+ComparisonRes String::compare(OrderedKey* k) const {
+    String* str = dynamic_cast<String*>(k);
+    if (str == nullptr)
         throw std::invalid_argument("Invalid key k");
-    
-    int cmp = strcmp(s, str->s);
-    if(cmp == 0)
+
+    int cmp = std::strcmp(s, str->s);
+    if (cmp == 0)
         return EQUAL;
-    else if(cmp > 0)
+    else if (cmp > 0)
         return GREATER;
     else
         return LESSER;
 }
 
-const char *String::getValue() const
-{
+const char* String::getValue() const {
     return s;
 }
 
-String::~String(){
+String::~String() {
     delete[] s;
 }
