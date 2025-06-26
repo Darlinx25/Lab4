@@ -1,9 +1,12 @@
 #include<iostream>
+#include "../presentacion/Login.h"
 using namespace std;
 
 void Menu()
 {
     int option=0;
+    Login * log = new Login();
+    log->pedirCredenciales();
 
     while(option!=12)
     {
@@ -24,11 +27,11 @@ void Menu()
         {
         case 1:
 
-            cout<<"ocion 1"<<endl;
+            cout<<"aca va el 1"<<endl;
 
             break;
         case 2:
-            cout<<"Aca va el 2"<<endl;
+            log->listarUsuarios();
             break;
 
         }

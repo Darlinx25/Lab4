@@ -1,6 +1,7 @@
 #include "Usuario.h"
 #include <iostream>
 
+using namespace std;
 Usuario::Usuario() {
 
 
@@ -67,5 +68,6 @@ void Usuario::setpass(string pass) {
 void Usuario::setFechaNac(DTFecha * fechaNac) {
     this->fechaNac = fechaNac;
 }
+
 
 

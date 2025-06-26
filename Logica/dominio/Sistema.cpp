@@ -8,6 +8,7 @@
 #include "Cliente.h"
 #include "DTDomicilio.h"
 #include "DTFecha.h"
+#include "Vendedor.h"
 #include "../../ICollection/collections/OrderedDictionary.h"
 #include "../../ICollection/String.h"
 
@@ -16,13 +17,9 @@ Sistema::Sistema() {
 
     this->usuarios = new OrderedDictionary();
     Usuario * c = new Cliente("faxcundo", "fax", new DTFecha(13,07,2003), new DTDomicilio("Maldonado","Uruguay"));
-//// Vendedor(string nick, string pass, DTFecha * fechaNac, int RUT);
-    //usuarios.push_back(c);
-    //usuarios.push_back(new Usuario("pepe","111"));
-    //usuarios.push_back(new Usuario("luis","222"));
-    //usuarios.push_back(new Usuario("faxcundo","fax"));
-
+    Usuario * v = new Vendedor("kevin","kev",new DTFecha(04,05,2001),2133668);
     this->usuarios->add(new String(c->getNick().c_str()),c);
+    this->usuarios->add(new String(v->getNick().c_str()),v);
 }
 
 

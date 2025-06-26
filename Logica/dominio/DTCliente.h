@@ -11,6 +11,7 @@ private:
 public:
     DTCliente(string nick, DTFecha* fechaNac, DTDomicilio * domicilio);
     ~DTCliente();
+    DTDomicilio* getDomicilio();
 
 
 };

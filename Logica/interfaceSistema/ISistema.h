@@ -11,5 +11,6 @@ class ISistema {
 public:
     virtual string ingresar(string nick, string pass)=0;
     virtual set<DTUsuario*> listarUsuarios()=0;
+
 };
 #endif /* LOGICA_ILOGIN_H_ */

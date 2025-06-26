@@ -2,9 +2,8 @@
 #define LOGICA_USUARIO_H_
 #include <iostream>
 #include <set>
-
+using namespace std;
 #include "DTFecha.h"
-#include "DTUsuario.h"
 #include "../../ICollection/interfaces/ICollectible.h"
 using namespace std;
 class DTUsuario;
@@ -26,6 +25,7 @@ public:
     void setpass(string pass);
     void setFechaNac(DTFecha * fechaNac);
     virtual DTUsuario * getDT()=0;
+
 
 
 

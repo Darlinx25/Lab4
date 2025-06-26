@@ -8,3 +8,11 @@ DTVendedor::DTVendedor(string nick, DTFecha* fechaNac, int RUT)
     this->RUT=RUT;
 
 }
+DTVendedor::~DTVendedor()
+{
+
+}
+
+int DTVendedor::getRUT(){
+    return this->RUT;
+}

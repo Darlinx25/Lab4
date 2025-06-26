@@ -32,12 +32,11 @@ void Login::pedirCredenciales() {
 
 void Login::listarUsuarios()
 {
-    set<DTUsuario*> lista;
     ISistema *iSistema = new SistemaControlador();
-    lista = iSistema->listarUsuarios();
-    for (int i = 0; i < lista.size(); i++)
-    {
-        //cout<<lista
+    set<DTUsuario*> usuarios = iSistema->listarUsuarios();
 
+    for (DTUsuario* dt : usuarios) {
+        cout << *dt << endl;
     }
+
 }

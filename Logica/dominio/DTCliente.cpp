@@ -17,3 +17,7 @@ DTCliente::~DTCliente()
 {
 
 }
+
+DTDomicilio* DTCliente::getDomicilio(){
+    return this->domicilio_;
+}

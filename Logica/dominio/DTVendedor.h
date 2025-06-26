@@ -11,6 +11,7 @@ private:
 public:
     DTVendedor(string nick, DTFecha* fechaNac, int RUT);
     ~DTVendedor();
+    int getRUT();
 
 };
 
