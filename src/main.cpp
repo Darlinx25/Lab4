@@ -11,6 +11,6 @@
 int main() {
     Menu();
     return 0;
-
+    //pasar rut de vendedor a LONG
 
 }

@@ -1,9 +1,4 @@
 #include "Sistema.h"
-
-
-
-
-
 #include "Usuario.h"
 #include "Cliente.h"
 #include "DTDomicilio.h"

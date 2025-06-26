@@ -40,8 +40,7 @@ ostream& operator<<(std::ostream& os, DTUsuario& u) {
     } else if (DTVendedor* v = dynamic_cast<DTVendedor*>(&u)) {
         os << "Vendedor - Nick: " << v->getNickDT()
            << ", RUT: " << v->getRUT();
-    } else {
-        os << "Usuario - Nick: " << u.getNickDT();
     }
+
     return os;
 }
