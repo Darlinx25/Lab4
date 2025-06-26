@@ -1,4 +1,6 @@
 #include<iostream>
+
+#include "../presentacion/PUsuario.h"
 #include "../presentacion/Login.h"
 using namespace std;
 
@@ -6,6 +8,7 @@ void Menu()
 {
     int option=0;
     Login * log = new Login();
+    PUsuario * usu = new PUsuario();
     log->pedirCredenciales();
 
     while(option!=12)
@@ -22,12 +25,13 @@ void Menu()
         cout<<"9)Eliminar comentario"<<endl;
         cout<<"10)Enviar producto"<<endl;
         cout<<"11)Expediente de Usuario"<<endl;
+        cout<<"12) Salir"<<endl;
         cin>>option;
         switch(option)
         {
         case 1:
 
-            cout<<"aca va el 1"<<endl;
+            usu->altaUsuario();
 
             break;
         case 2:

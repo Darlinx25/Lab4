@@ -21,3 +21,9 @@ set<DTUsuario*> SistemaControlador::listarUsuarios()
 {
     return this->sistema->listarUsuarios();
 }
+
+string SistemaControlador::altaUsuario(DTUsuario * usu) {
+
+    return this->sistema->altaUsuario(usu);
+
+}

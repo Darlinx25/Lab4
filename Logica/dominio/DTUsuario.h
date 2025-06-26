@@ -6,13 +6,15 @@
 #include "Usuario.h"
 using namespace std;
 
-class DTUsuario{
+class DTUsuario : public ICollectible{
 protected:
     string nickDT;
+    string pass;
     DTFecha * fechanacDT;
 
 public:
     DTUsuario();
+    DTUsuario(string nick, string pass, DTFecha * fechanacDT);
     virtual ~DTUsuario()=0;
     void setnickDT(string nickDT);
     void setFechaNacDT(DTFecha * fechanacDT);

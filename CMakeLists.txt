@@ -27,7 +27,9 @@ file(GLOB_RECURSE SOURCE_FILES
 )
 
 # Crear el ejecutable
-add_executable(Lab4 ${SOURCE_FILES})
+add_executable(Lab4 ${SOURCE_FILES}
+        presentacion/PUsuario.cpp
+        presentacion/PUsuario.h)
 
 # Especificar la ruta completa a String.cpp en caso de que no se esté incluyendo correctamente
 # (opcional, solo si sigue fallando con el GLOB)
