@@ -58,42 +58,9 @@ set<DTUsuario*> Sistema::listarUsuarios()
 
 }
 
-/*string Sistema::altaUsuario(DTUsuario * usu) {
-
-    string resultado = "Usuario Ingresado Correctamente";
-
-   this->usuarios = new OrderedDictionary();
-
-    IIterator * it = this->usuarios->getIterator();
-    while(it->hasCurrent()) {
-
-        ICollectible * c = it->getCurrent();
-        Usuario* u = dynamic_cast<Usuario*>(c);
-
-        if (u != nullptr && u->getNick() == usu->getNickDT()) {
-            resultado = "Usuario ya existe";
-            break;
-
-        }
-        it->next();
-
-    }
-
-    if (resultado != "Usuario ya existe") {
-
-        this->usuarios->add(new String(usu->getNickDT().c_str()), usu);
-
-    }
-    return resultado;
-
-}*/
-
-
 string Sistema::altaUsuario(DTUsuario * usu) {
 
     string resultado = "Usuario Ingresado Correctamente";
-
-
     IIterator * it = this->usuarios->getIterator();
     while(it->hasCurrent()) {
         ICollectible * c = it->getCurrent();
@@ -120,7 +87,6 @@ string Sistema::altaUsuario(DTUsuario * usu) {
 
         }
     }
-
     return resultado;
 
 }

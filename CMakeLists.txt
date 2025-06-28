@@ -28,6 +28,12 @@ file(GLOB_RECURSE SOURCE_FILES
 
 # Crear el ejecutable
 add_executable(Lab4 ${SOURCE_FILES}
+        Logica/dominio/Producto.cpp
+        Logica/dominio/Producto.h
+        Logica/dominio/DTCategoria.cpp
+        Logica/dominio/DTCategoria.h
+        presentacion/PUsuario.cpp
+        presentacion/PUsuario.h
 
 )
 

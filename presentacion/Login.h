@@ -5,11 +5,10 @@
 class Login {
 private:
     ISistema* isistema;
-    public:
+public:
     Login(ISistema* isistema);
     virtual ~Login();
     void pedirCredenciales();
-    void listarUsuarios();
-    void altaUsuario();
+
 };
 #endif /* PRESENTACION_LOGIN_H_ */
