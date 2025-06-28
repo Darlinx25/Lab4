@@ -44,63 +44,59 @@ void Login::listarUsuarios()
 
 }
 
+#include <limits> // al inicio del archivo si no está
+
 void Login::altaUsuario() {
-
     DTUsuario* usuario;
-    cout<<"Ingrese el nick"<<endl;
+    cout << "Ingrese el nick" << endl;
     string nick;
-    cin>>nick;
+    cin >> nick;
 
-    cout<<"Ingrese el password"<<endl;
+    cout << "Ingrese el password" << endl;
     string pass;
-    cin>>pass;
+    cin >> pass;
 
-    cout<<"Ingrese la fecha de nacimiento"<<endl;
-    cout<<"Ingrese el dia"<<endl;
+    cout << "Ingrese la fecha de nacimiento" << endl;
+    cout << "Ingrese el dia" << endl;
     int dia;
-    cin>>dia;
+    cin >> dia;
 
-    cout<<"Ingrese el mes"<<endl;
+    cout << "Ingrese el mes" << endl;
     int mes;
-    cin>>mes;
+    cin >> mes;
 
-    cout<<"Ingrese el anio"<<endl;
+    cout << "Ingrese el anio" << endl;
     int anio;
-    cin>>anio;
+    cin >> anio;
 
-    DTFecha * f = new DTFecha(dia, mes, anio);
-
-
-    cout<<"Que tipo de usuario va a ingresar:"<<endl;
-    cout<<"1) Cliente"<<endl;
-    cout<<"2) Vendedor"<<endl;
+    cout << "Que tipo de usuario va a ingresar:" << endl;
+    cout << "1) Cliente" << endl;
+    cout << "2) Vendedor" << endl;
     int tipoUsu;
-    cin>>tipoUsu;
+    cin >> tipoUsu;
+
+    // Limpiar el buffer antes de leer strings largos o con espacios
+    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     if (tipoUsu == 1) {
-
-        cout<<"Ingrese la dirección de residencia"<<endl;
+        cout << "Ingrese la dirección de residencia" << endl;
         string direccion;
-        cin>>direccion;
+        getline(cin, direccion); // permite ingresar espacios
 
-        cout<<"Ingrese la ciudad de residencia"<<endl;
+        cout << "Ingrese la ciudad de residencia" << endl;
         string ciudad;
-        cin>>ciudad;
+        getline(cin, ciudad);
 
-        DTDomicilio * d = new DTDomicilio(direccion, ciudad);
+        usuario = new DTCliente(nick, new DTFecha(dia, mes, anio), new DTDomicilio(direccion, ciudad));
 
-        usuario = new DTCliente(nick, f, d);
-
-    }else if (tipoUsu == 2) {
-
-        cout<<"Ingrese el RUT"<<endl;
+    } else if (tipoUsu == 2) {
+        cout << "Ingrese el RUT" << endl;
         int rut;
-        cin>>rut;
-        usuario = new DTVendedor(nick, f, rut);
+        cin >> rut;
+        usuario = new DTVendedor(nick, new DTFecha(dia, mes, anio), rut);
     }
 
     string res = this->isistema->altaUsuario(usuario);
-
-    cout<<res<<endl;
-
+    cout << res << endl;
 }
+

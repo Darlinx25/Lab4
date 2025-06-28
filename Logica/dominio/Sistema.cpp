@@ -112,7 +112,15 @@ string Sistema::altaUsuario(DTUsuario * usu) {
             this->usuarios->add(new String(usu->getNickDT().c_str()), c);
 
         }
+        else if (DTVendedor * dtc = dynamic_cast<DTVendedor*>(usu))
+        {
+
+            Usuario * c = new Vendedor( dtc->getNickDT(),dtc->getPass(),dtc->getFechaNacDT(),dtc->getRUT());
+            this->usuarios->add(new String(usu->getNickDT().c_str()), c);
+
+        }
     }
+
     return resultado;
 
 }
