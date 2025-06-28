@@ -13,7 +13,7 @@ public:
     virtual ~PUsuario();
     void listarUsuarios();
     void altaUsuario();
-    void listarAdministrador();
+
 };
 
 

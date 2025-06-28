@@ -1,5 +1,6 @@
 #include<iostream>
 
+#include "PProducto.h"
 #include "PUsuario.h"
 #include "SistemaControlador.h"
 #include "../presentacion/Login.h"
@@ -12,6 +13,7 @@ void Menu()
     Login * log = new Login(isistema);
     PUsuario * usuario= new PUsuario(isistema);
     log->pedirCredenciales();
+    PProducto* producto= new PProducto(isistema);
 
     while(option!=12)
     {
@@ -41,7 +43,7 @@ void Menu()
             break;
 
         case 3:
-            //usuario->listarAdministrador();
+            producto->altaProduto();
             break;
         }
     }

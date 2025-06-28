@@ -16,5 +16,6 @@ public:
     string ingresar(string nick, string pass);
     set<DTUsuario*> listarUsuarios();
     virtual string altaUsuario(DTUsuario * usu);
+    set<DTUsuario*> listarVendedores();
 };
 #endif /* LOGICA_SISTEMA_H_ */

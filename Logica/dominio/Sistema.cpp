@@ -91,3 +91,22 @@ string Sistema::altaUsuario(DTUsuario * usu) {
 
 }
 
+set<DTUsuario*> Sistema::listarVendedores()
+{
+
+    set<DTUsuario*> resultado;
+    IIterator * it = this->usuarios->getIterator();
+    while(it->hasCurrent()){
+        ICollectible * e = it->getCurrent();
+        Usuario* u = dynamic_cast<Vendedor*>(e);
+        if (u != nullptr)
+        {
+            resultado.insert(u->getDT());
+        }
+
+        it->next();
+    }
+    delete it;
+    return resultado;
+
+}

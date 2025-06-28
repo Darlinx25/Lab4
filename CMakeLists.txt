@@ -36,6 +36,8 @@ add_executable(Lab4 ${SOURCE_FILES}
         presentacion/PUsuario.h
         presentacion/PProducto.cpp
         presentacion/PProducto.h
+        Logica/dominio/DTProducto.cpp
+        Logica/dominio/DTProducto.h
 
 )
 

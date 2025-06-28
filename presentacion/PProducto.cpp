@@ -3,6 +3,7 @@
 //
 
 #include "PProducto.h"
+#include "DTVendedor.h"
 
 
 PProducto::PProducto(ISistema * isistema) {
@@ -12,11 +13,15 @@ PProducto::PProducto(ISistema * isistema) {
 PProducto::~PProducto(){}
 
 void PProducto::altaProduto() {
-    set<DTUsuario*> usuarios = this->isistema->listarVendedores();
+    set<DTUsuario*> vendedor = this->isistema->listarVendedores();
 
-    for (DTUsuario* dt : usuarios) {
+    for (DTUsuario* dt : vendedor) {
         cout << *dt << endl;
     }
+    cout<<"Ingrese el nick del vendedor"<<endl;
+    string nick;
+    cin>>nick;
+
 
 }
 
