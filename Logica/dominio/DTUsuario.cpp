@@ -26,7 +26,11 @@ void DTUsuario::setFechaNacDT(DTFecha * fechanacDT)
 string DTUsuario::getNickDT(){
     return this->nickDT;
 }
+string DTUsuario::getPass()
+{
+    return this->pass;
 
+}
 DTFecha* DTUsuario::getFechaNacDT(){
     return this->fechanacDT;
 }

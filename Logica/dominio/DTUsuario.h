@@ -19,6 +19,7 @@ public:
     void setnickDT(string nickDT);
     void setFechaNacDT(DTFecha * fechanacDT);
     string getNickDT();
+    string getPass();
     DTFecha* getFechaNacDT();
 
 

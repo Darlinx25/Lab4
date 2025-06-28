@@ -3,6 +3,8 @@
 #include "Cliente.h"
 #include "DTDomicilio.h"
 #include "DTFecha.h"
+#include "DTCliente.h"
+#include "DTVendedor.h"
 #include "Vendedor.h"
 #include "../../ICollection/collections/OrderedDictionary.h"
 #include "../../ICollection/String.h"
@@ -42,6 +44,7 @@ string Sistema::ingresar(string nick, string pass) {
 
 set<DTUsuario*> Sistema::listarUsuarios()
 {
+
     set<DTUsuario*> resultado;
     IIterator * it = this->usuarios->getIterator();
     while(it->hasCurrent()){
@@ -50,15 +53,16 @@ set<DTUsuario*> Sistema::listarUsuarios()
         resultado.insert(u->getDT()); // Polimórfico: Cliente/Vendedor devuelven su propio DT
         it->next();
     }
+    delete it;
     return resultado;
 
 }
 
-string Sistema::altaUsuario(DTUsuario * usu) {
+/*string Sistema::altaUsuario(DTUsuario * usu) {
 
     string resultado = "Usuario Ingresado Correctamente";
 
-    this->usuarios = new OrderedDictionary();
+   this->usuarios = new OrderedDictionary();
 
     IIterator * it = this->usuarios->getIterator();
     while(it->hasCurrent()) {
@@ -80,7 +84,35 @@ string Sistema::altaUsuario(DTUsuario * usu) {
         this->usuarios->add(new String(usu->getNickDT().c_str()), usu);
 
     }
+    return resultado;
 
+}*/
+
+
+string Sistema::altaUsuario(DTUsuario * usu) {
+
+    string resultado = "Usuario Ingresado Correctamente";
+
+
+    IIterator * it = this->usuarios->getIterator();
+    while(it->hasCurrent()) {
+        ICollectible * c = it->getCurrent();
+        Usuario* u = dynamic_cast<Usuario*>(c);
+        if (u != nullptr && u->getNick() == usu->getNickDT()) {
+            resultado = "Usuario ya existe";
+            break;
+        }
+        it->next();
+    }
+    if (resultado != "Usuario ya existe") {
+        if (DTCliente* dtc = dynamic_cast<DTCliente*>(usu))
+        {
+
+            Usuario * c = new Cliente( dtc->getNickDT(),dtc->getPass(),dtc->getFechaNacDT(),dtc->getDomicilio());
+            this->usuarios->add(new String(usu->getNickDT().c_str()), c);
+
+        }
+    }
     return resultado;
 
 }

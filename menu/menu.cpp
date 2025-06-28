@@ -1,14 +1,14 @@
 #include<iostream>
 
-#include "../presentacion/PUsuario.h"
+#include "SistemaControlador.h"
 #include "../presentacion/Login.h"
 using namespace std;
 
 void Menu()
 {
     int option=0;
-    Login * log = new Login();
-    PUsuario * usu = new PUsuario();
+    ISistema* isistema = new SistemaControlador();
+    Login * log = new Login(isistema);
     log->pedirCredenciales();
 
     while(option!=12)
@@ -31,7 +31,7 @@ void Menu()
         {
         case 1:
 
-            usu->altaUsuario();
+            log->altaUsuario();
 
             break;
         case 2:

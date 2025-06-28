@@ -8,7 +8,7 @@
 using namespace std;
 class Sistema {
 private:
-    //list<Usuario*> usuarios;
+
     IDictionary * usuarios;
 public:
     Sistema();
