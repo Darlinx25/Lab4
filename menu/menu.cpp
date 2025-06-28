@@ -40,6 +40,9 @@ void Menu()
             usuario->listarUsuarios();
             break;
 
+        case 3:
+            //usuario->listarAdministrador();
+            break;
         }
     }
 

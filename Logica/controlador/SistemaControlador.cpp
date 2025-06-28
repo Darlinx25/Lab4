@@ -27,3 +27,7 @@ string SistemaControlador::altaUsuario(DTUsuario * usu) {
     return this->sistema->altaUsuario(usu);
 
 }
+
+set<DTUsuario*>  SistemaControlador::listarVendedores() {
+   // return this->sistema-
+}
