@@ -18,6 +18,7 @@ public:
     virtual set<DTProducto*> listarProductos();
     virtual DTProducto * seleccionarProducto(string codigo);
     virtual Usuario * obtenerVendedor(string codigo);
+    virtual set<DTUsuario*> altaPromocion(DTPromocion * p);
 };
 
 #endif /* LOGICA_CONTROLADOR_SISTEMACONTROLADOR_H_ */

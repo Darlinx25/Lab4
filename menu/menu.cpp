@@ -55,10 +55,9 @@ void Menu()
             break;
         case 4:
             producto->datosProducto();
-
-
             break;
         case 5:
+                promocion->altaPromocion();
             break;
         case 6:
             break;

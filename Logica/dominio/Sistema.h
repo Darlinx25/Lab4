@@ -2,6 +2,7 @@
 #define LOGICA_SISTEMA_H_
 #include "Usuario.h"
 #include "DTUsuario.h"
+#include  "DTPromocion.h"
 #include "../../ICollection/interfaces/IDictionary.h"
 #include "DTProducto.h"
 #include <string>
@@ -25,5 +26,6 @@ public:
     void agregarProductoConVendedor(DTProducto * p, string nickVendedor);
     DTProducto * seleccionarProducto(string codigo);
     Usuario * obtenerVendedor(string codigo);
+    set<DTUsuario*> altaPromocion(DTPromocion * p);
 };
 #endif /* LOGICA_SISTEMA_H_ */

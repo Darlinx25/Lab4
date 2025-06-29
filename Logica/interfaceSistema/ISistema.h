@@ -6,6 +6,7 @@
 #include "DTUsuario.h"
 #include "DTProducto.h"
 #include "DTProducto.h"
+#include "DTPromocion.h"
 using namespace std;
 //Interface del Sistema
 //Como este ejemplo es muy sencillo, solo tengo una interface del sistema
@@ -19,6 +20,7 @@ public:
     virtual set<DTProducto*> listarProductos()=0;
     virtual DTProducto * seleccionarProducto(string codigo)=0;
     virtual Usuario * obtenerVendedor(string codigo)=0;
+    virtual set<DTUsuario*> altaPromocion(DTPromocion * p)=0;
 
 };
 #endif /* LOGICA_ILOGIN_H_ */

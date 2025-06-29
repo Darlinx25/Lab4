@@ -1,29 +1,42 @@
-#ifndef PRODUCTO_H
-#define PRODUCTO_H
-#include <string>
-#include "DTCategoria.h"
-#include "Usuario.h"
-#include "DTUsuario.h"
-#include "../../ICollection/interfaces/IDictionary.h"
-#include "DTProducto.h"
-#include <string>
-#include "Requiere.h"
-#include <list>
+//
+// Created by Chorizo-Cosmico on 28/06/2025.
+//
+
+#ifndef PROMOCION_H
+#define PROMOCION_H
+
+#include <iostream>
+#include <set>
+#include "../../ICollection/interfaces/ICollectible.h"
+
 using namespace std;
 
-class Producto: public ICollectible {
+class DTPromocion;
+
+class Promocion : public ICollectible {
 private:
-    string nombreProm;
-    string codigoProm;
-    bool vigenteProm;
-    list<Requiere *> requiere;
+
+    string nombre;
+    int codigo;
+    bool vigente;
 
 public:
 
+    Promocion(string nombre, int codigo, bool vigente);
+    virtual ~Promocion();
 
+    string getNombre();
+    int getCodigo();
+    bool getVigente();
+
+    void setNombre(string nombre);
+    void setCodigo(int codigo);
+    void setVigente(bool vigente);
+
+    virtual DTPromocion * getDT();
 
 };
 
 
 
-#endif //PRODUCTO_H
+#endif //PROMOCION_H

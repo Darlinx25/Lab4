@@ -49,3 +49,9 @@ DTProducto * SistemaControlador::seleccionarProducto(string codigo)
 Usuario *SistemaControlador::obtenerVendedor(string codigo) {
     return this->sistema->obtenerVendedor(codigo);
 }
+
+set<DTUsuario*> SistemaControlador::altaPromocion(DTPromocion * p) {
+    return this->sistema->altaPromocion(p);
+
+
+}

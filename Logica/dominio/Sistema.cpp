@@ -228,3 +228,20 @@ Usuario* Sistema::obtenerVendedor(string codigo) {
         return p;
     }
 }
+
+set<DTUsuario*> Sistema::altaPromocion(DTPromocion * p) {
+
+    set<DTUsuario*> resultado;
+
+    Promocion * pro = new Promocion(p->getNombreDT(), p->getCodigoDT(), p->getVigente()); /*1*/
+    this->promocion->add(new String(p->getNombreDT().c_str()), pro); /*2*/
+
+    resultado = listarVendedores(); /*3*/
+    /*Con que listarVendedores Muestre los vendedores en pantalla ya alcanza
+     *El diagrama de comunicacion pide que devuelva un set<DTVendedor> pero es solo
+     *para verlo, no lo usa, asi que con que muestre en pantalla alcanza
+     */
+
+    return resultado; /*4*/
+
+}

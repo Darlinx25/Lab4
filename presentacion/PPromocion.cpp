@@ -10,9 +10,8 @@
 #include "../Logica/dominio/DTCliente.h"
 #include "../Logica/dominio/DTVendedor.h"
 #include <limits>
-#include "../Logica/dominio/DTPromocion.h"
 
-
+#include "DTPromocion.h"
 
 PPromocion::PPromocion(ISistema *isistema) {
     this->isistema = isistema;
@@ -35,6 +34,13 @@ void PPromocion::altaPromocion() {
 
     bool vigente = true;
 
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
     promocion = new DTPromocion(nombre, codigo, vigente);
+    set<DTUsuario*> usuarios = this->isistema->altaPromocion(promocion);
+
+    for (DTUsuario* dt : usuarios) {
+        cout << *dt << endl;
+    }
 
 }
