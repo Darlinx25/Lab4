@@ -7,7 +7,6 @@
 #include <string>
 #include "DTVendedor.h"
 using namespace std;
-enum Categoria {ropa=1, electrodomesticos=2,otros=3};
 class DTProducto {
 private:
     string codigo;
@@ -16,11 +15,12 @@ private:
     int stock;
     string descripcion;
     bool disponible;
-    Categoria categoria;
+    string categoria;
+
 
 
 public:
-    DTProducto(string,string,float,int,string,bool,Categoria);
+    DTProducto(string codigo,string nombre,float precio,int stock,string descripcion ,bool disponible, string categoria);
     ~DTProducto();
     string getCodigo();
     string getNombre();
@@ -28,13 +28,13 @@ public:
     int getStock();
     string getDescripcion();
     bool getDisponible();
-    Categoria getCategoria();
+    string getCategoria();
 
 
 
 };
 
 
-//DTProducto * x = new DTProducto(1,"EZEQUIEL",20,1,"PESADO PERDIDO",true,ropa);
+std::ostream& operator<<(std::ostream& os, DTProducto& u);
 
 #endif //DTPRODUCTO_H

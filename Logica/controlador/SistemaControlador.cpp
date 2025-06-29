@@ -36,3 +36,7 @@ string SistemaControlador::altaProducto(DTProducto * p,string vendedor)
 {
     return this->sistema->altaProducto(p,vendedor);
 }
+
+set<DTProducto*> SistemaControlador:: listarProductos() {
+    return this->sistema->listarProductos();
+}

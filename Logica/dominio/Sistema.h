@@ -20,5 +20,7 @@ public:
     string altaUsuario(DTUsuario * usu);
     set<DTUsuario*> listarVendedores();
     string altaProducto(DTProducto * p,string vendedor);
+    set<DTProducto*> listarProductos();
+    void agregarProductoConVendedor(DTProducto * p, string nickVendedor);
 };
 #endif /* LOGICA_SISTEMA_H_ */

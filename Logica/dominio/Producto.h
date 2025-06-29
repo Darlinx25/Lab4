@@ -16,15 +16,16 @@ private:
     int stock;
     string descripcion;
     bool disponible;
-    Categoria categoria;
     Usuario* vendedor;
+    string categoria;
 
 
 public:
-    Producto(string codigo,string nombre,float precio,int stock,string descripcin ,bool disponible ,Categoria cat,Usuario * v);
+    Producto(string codigo,string nombre,float precio,int stock,string descripcin ,bool disponible , string categoria, Usuario * v);
     ~Producto();
     DTProducto * getDT();
     string getCodigo();
+    string getCategoria();
 
 
 

@@ -20,7 +20,7 @@ Sistema::Sistema() {
     Usuario * v = new Vendedor("kevin","kev",new DTFecha(04,05,2001),2133668);
     this->usuarios->add(new String(c->getNick().c_str()),c);
     this->usuarios->add(new String(v->getNick().c_str()),v);
-    Producto * p = new Producto("A27","Arroz",56,2,"Blanco",true ,otros,dynamic_cast<Vendedor*>(v));
+    Producto * p = new Producto("A27","Arroz",56,2,"Blanco",true, "ropa", dynamic_cast<Vendedor*>(v));
     this->productos->add(new String(p->getCodigo().c_str()),p);
 }
 
@@ -116,45 +116,80 @@ set<DTUsuario*> Sistema::listarVendedores()
 
 }
 
-string Sistema::altaProducto(DTProducto * p,string vendedor)
+string Sistema::altaProducto(DTProducto * p, string vendedor)
 {
     string resultado = "Producto Ingresado Correctamente";
-    IIterator * it = this->usuarios->getIterator();
-    Usuario* u;
+
+    // 1. Buscar el vendedor
+    IIterator* it = this->usuarios->getIterator();
+    Vendedor* vend = nullptr;
+
     while(it->hasCurrent()) {
-        ICollectible * c = it->getCurrent();
-        u = dynamic_cast<Vendedor*>(c);
-        if (u != nullptr && u->getNick() == vendedor) {
+        ICollectible* c = it->getCurrent();
+        // Solo casteamos a Vendedor, ya que buscamos vendedor
+        Vendedor* v = dynamic_cast<Vendedor*>(c);
+        if (v != nullptr && v->getNick() == vendedor) {
+            vend = v;
             break;
         }
         it->next();
     }
     delete it;
+
+    if (vend == nullptr) {
+        // Vendedor no encontrado, no podemos continuar
+        return "Vendedor no encontrado";
+    }
+
+    // 2. Verificar que no exista producto con el mismo código
     it = this->productos->getIterator();
     while(it->hasCurrent()) {
-        ICollectible * c = it->getCurrent();
-        Producto * l = dynamic_cast<Producto*>(c);
+        ICollectible* c = it->getCurrent();
+        Producto* l = dynamic_cast<Producto*>(c);
         if (l != nullptr && l->getCodigo() == p->getCodigo()) {
             resultado = "Producto ya existe";
-
             break;
         }
         it->next();
     }
+    delete it;
 
-
-
-
+    // 3. Si producto no existe, crearlo y asociarlo al vendedor
     if (resultado != "Producto ya existe") {
-
-            Producto * c = new Producto( p->getCodigo(),p->getNombre(),p->getPrecio(),p->getStock(),p->getDescripcion(),p->getDisponible(),p->getCategoria(),u);
-            this->productos->add(new String(p->getCodigo().c_str()), c);
+        Producto* c = new Producto(p->getCodigo(), p->getNombre(), p->getPrecio(), p->getStock(), p->getDescripcion(), p->getDisponible(), p->getCategoria(), vend);
+        this->productos->add(new String(p->getCodigo().c_str()), c);
+        vend->agregarProducto(c);
     }
-    //LLAMAR FUNCION QUE AGREGE PRODUCTO A LA LISTA DE PRODCUTOS DEL VENDEDOR
+
+    return resultado;
+}
+
+
+set<DTProducto*> Sistema::listarProductos() {
+
+    set<DTProducto*> resultado;
+    IIterator * it = this->productos->getIterator();
+    while(it->hasCurrent()){
+        ICollectible * e = it->getCurrent();
+        Producto * u = dynamic_cast<Producto*>(e);
+        resultado.insert(u->getDT()); // Polimórfico: Cliente/Vendedor devuelven su propio DT
+        it->next();
+    }
     delete it;
     return resultado;
 
 
+}
 
-
+void Sistema::agregarProductoConVendedor(DTProducto* p, string nick) {
+    String* clave = new String(nick.c_str());
+    String* claveProd = new String(p->getCodigo().c_str());
+    if (this->usuarios->member(clave)) {
+        Vendedor* v = dynamic_cast<Vendedor*>(this->usuarios->find(clave));
+        if (v != nullptr) {
+            Producto * nuevo = dynamic_cast<Producto*>(this->productos->find(claveProd));
+            v->agregarProducto(nuevo);
+        }
+    }
+    delete clave;
 }

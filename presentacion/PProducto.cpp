@@ -8,6 +8,7 @@
 #include <limits>
 
 
+
 PProducto::PProducto(ISistema * isistema) {
     this->isistema = isistema;
 }
@@ -58,15 +59,15 @@ void PProducto::altaProduto() {
 
     if (cate == 1)
     {
-       this->isistema->altaProducto(new DTProducto(codigo,nombre,precio,stock,descripcion ,disponible2 ,ropa),nick);
+       this->isistema->altaProducto(new DTProducto(codigo,nombre,precio,stock,descripcion ,disponible2, "ropa"),nick);
     }
     else if (cate == 2)
     {
-        this->isistema->altaProducto(new DTProducto(codigo,nombre,precio,stock,descripcion ,disponible2 ,electrodomesticos),nick);
+        this->isistema->altaProducto(new DTProducto(codigo,nombre,precio,stock,descripcion ,disponible2, "electrodomesticos" ),nick);
     }
     else if (cate == 3)
     {
-        this->isistema->altaProducto(new DTProducto(codigo,nombre,precio,stock,descripcion ,disponible2 ,otros),nick);
+        this->isistema->altaProducto(new DTProducto(codigo,nombre,precio,stock,descripcion ,disponible2, "otros" ),nick);
     }
     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
@@ -77,3 +78,13 @@ void PProducto::altaProduto() {
 
 }
 
+
+void PProducto::listarProductos()
+{
+
+    set<DTProducto*> productos = this->isistema->listarProductos();
+
+    for (DTProducto* dt : productos) {
+        cout << *dt << endl <<endl;;
+    }
+}

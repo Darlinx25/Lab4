@@ -9,6 +9,7 @@
 #include "Producto.h"
 #include "../../ICollection/interfaces/IDictionary.h"
 using namespace std;
+class Producto;
 class Vendedor:public Usuario {
 private:
     int RUT;
@@ -17,7 +18,8 @@ public:
     Vendedor(string nick, string pass, DTFecha * fechaNac, int RUT);
     ~Vendedor();
     DTUsuario * getDT();
-    //void agregarProdcto(DTProducto * p);
+    void agregarProducto(Producto * p);
+    void mostrarProductos();
 
 };
 #endif //VENDEDOR_H

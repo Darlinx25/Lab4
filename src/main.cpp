@@ -13,5 +13,7 @@ int main() {
     return 0;
     //pasar rut de vendedor a LONG
     //Cada clase tenga si Presentador
+    //facundo es un boludo y deberia de dejar la carrera
+    //SACAR MOSTRARPRODUCTOS DE LA FUNCION AGREGARPRODUCTO DE VENDEDOR.CPP SOLO ESTA PARA TESTEAR QUE ANDE BIEN EL CODIGO;
 
 }

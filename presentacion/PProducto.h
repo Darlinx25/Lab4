@@ -12,6 +12,8 @@ public:
     PProducto(ISistema * isistema);
     ~PProducto();
     void altaProduto();
+    void listarProductos();
+
 };
 
 
