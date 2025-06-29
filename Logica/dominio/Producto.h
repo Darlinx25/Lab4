@@ -16,7 +16,7 @@ private:
     int stock;
     string descripcion;
     bool disponible;
-    Usuario* vendedor;
+    Usuario * vendedor;
     string categoria;
 
 

@@ -45,3 +45,7 @@ DTProducto * SistemaControlador::seleccionarProducto(string codigo)
 {
     return this->sistema->seleccionarProducto(codigo);
 }
+
+Usuario *SistemaControlador::obtenerVendedor(string codigo) {
+    return this->sistema->obtenerVendedor(codigo);
+}

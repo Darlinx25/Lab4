@@ -29,8 +29,6 @@ DTUsuario * Vendedor::getDT()
 void Vendedor::agregarProducto(Producto * p) {
 
     this->ListProd->add(new String(p->getCodigo().c_str()), p);
-    cout << "productos del vendedor: " << endl;
-    this->mostrarProductos();
 
 
 }

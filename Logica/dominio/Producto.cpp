@@ -5,7 +5,7 @@
 #include "Producto.h"
 
 
-Producto::Producto(string codigo,string nombre,float precio,int stock,string descripcion ,bool disponible , string categoria, Usuario* v)
+Producto::Producto(string codigo,string nombre,float precio,int stock,string descripcion ,bool disponible , string categoria, Usuario * v)
 {
     this->codigo = codigo;
     this->nombre = nombre;
@@ -23,7 +23,7 @@ Producto::~Producto()
 }
 DTProducto * Producto::getDT()
 {
-    return new DTProducto( this->codigo, this->nombre, this->precio, this->stock, this->descripcion,this->disponible, this->categoria);
+    return new DTProducto( this->codigo, this->nombre, this->precio, this->stock, this->descripcion,this->disponible, this->categoria, this->vendedor);
 }
 
 string Producto::getCodigo()

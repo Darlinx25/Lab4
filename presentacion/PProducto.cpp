@@ -24,6 +24,7 @@ void PProducto::altaProduto() {
     cout<<"Ingrese el nick del vendedor"<<endl;
     string nick;
     cin>>nick;
+    Usuario * v = this->isistema->obtenerVendedor(nick);
     cout<<"Ingrese los datos del producto"<<endl<<"Codgio: "<<endl;
     string codigo;
     cin>>codigo;
@@ -47,6 +48,7 @@ void PProducto::altaProduto() {
     int disponible;
     cin>>disponible;
     bool disponible2;
+
     if (disponible==1)
     {
         disponible2 = true;
@@ -59,15 +61,15 @@ void PProducto::altaProduto() {
 
     if (cate == 1)
     {
-       this->isistema->altaProducto(new DTProducto(codigo,nombre,precio,stock,descripcion ,disponible2, "ropa"),nick);
+       this->isistema->altaProducto(new DTProducto(codigo,nombre,precio,stock,descripcion ,disponible2, "ropa", v ),nick);
     }
     else if (cate == 2)
     {
-        this->isistema->altaProducto(new DTProducto(codigo,nombre,precio,stock,descripcion ,disponible2, "electrodomesticos" ),nick);
+        this->isistema->altaProducto(new DTProducto(codigo,nombre,precio,stock,descripcion ,disponible2, "electrodomesticos", v ),nick);
     }
     else if (cate == 3)
     {
-        this->isistema->altaProducto(new DTProducto(codigo,nombre,precio,stock,descripcion ,disponible2, "otros" ),nick);
+        this->isistema->altaProducto(new DTProducto(codigo,nombre,precio,stock,descripcion ,disponible2, "otros", v ),nick);
     }
     cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
@@ -98,7 +100,7 @@ void PProducto::datosProducto()
     DTProducto * dt = this->isistema->seleccionarProducto(cod);//hacer una funcion que devuelva el DTProducto en base a un codigo
     if (dt != nullptr)
     {
-        cout<<dt->getPrecio()<<endl<<dt->getStock()<<endl<<dt->getDescripcion()<<endl<<dt->getCategoria()<<endl;
+        cout<<"precio: "<<dt->getPrecio()<<endl<<"precio: "<<dt->getStock()<<endl<<"Descripcion: "<<dt->getDescripcion()<<endl<<"Categoria: "<<dt->getCategoria()<<endl<<"nombre del Vendedor: "<<dt->nombreVendedor()<<endl;
     }
 
 

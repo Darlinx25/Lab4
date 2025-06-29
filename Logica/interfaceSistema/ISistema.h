@@ -18,6 +18,7 @@ public:
     virtual string altaProducto(DTProducto * p,string vendedor)=0;
     virtual set<DTProducto*> listarProductos()=0;
     virtual DTProducto * seleccionarProducto(string codigo)=0;
+    virtual Usuario * obtenerVendedor(string codigo)=0;
 
 };
 #endif /* LOGICA_ILOGIN_H_ */

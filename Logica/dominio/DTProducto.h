@@ -6,6 +6,7 @@
 #define DTPRODUCTO_H
 #include <string>
 #include "DTVendedor.h"
+#include "Vendedor.h"
 using namespace std;
 class DTProducto {
 private:
@@ -16,11 +17,12 @@ private:
     string descripcion;
     bool disponible;
     string categoria;
+    DTUsuario * vendedor;
 
 
 
 public:
-    DTProducto(string codigo,string nombre,float precio,int stock,string descripcion ,bool disponible, string categoria);
+    DTProducto(string codigo,string nombre,float precio,int stock,string descripcion ,bool disponible, string categoria, Usuario * v);
     ~DTProducto();
     string getCodigo();
     string getNombre();
@@ -29,6 +31,7 @@ public:
     string getDescripcion();
     bool getDisponible();
     string getCategoria();
+    string nombreVendedor();
 
 
 

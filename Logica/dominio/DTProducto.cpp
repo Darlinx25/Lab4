@@ -4,8 +4,7 @@
 
 #include "DTProducto.h"
 
-DTProducto::DTProducto(string codigo,string nombre,float precio,int stock,string descripcion ,bool disponible, string categoria)
-{
+DTProducto::DTProducto(string codigo,string nombre,float precio,int stock,string descripcion ,bool disponible, string categoria, Usuario * v) {
     this->codigo = codigo;
     this->nombre = nombre;
     this->precio = precio;
@@ -13,7 +12,7 @@ DTProducto::DTProducto(string codigo,string nombre,float precio,int stock,string
     this->descripcion = descripcion;
     this->disponible = disponible;
     this->categoria = categoria;
-
+    this->vendedor = v->getDT();
 
 }
 DTProducto::~DTProducto()
@@ -53,4 +52,8 @@ ostream& operator<<(std::ostream& os, DTProducto& u) {
     os << "Codigo: " << u.getCodigo() << "\n"
        << "Nombre: " << u.getNombre() << "\n";
     return os;
+}
+
+string DTProducto::nombreVendedor() {
+    return this->vendedor->getNickDT();
 }

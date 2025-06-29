@@ -213,3 +213,17 @@ void Sistema::agregarProductoConVendedor(DTProducto* p, string nick) {
     delete claveProd;
     delete clave;
 }
+
+Usuario* Sistema::obtenerVendedor(string codigo) {
+    String* clave = new String(codigo.c_str());
+    Usuario * p = dynamic_cast<Vendedor*>(this->usuarios->find(clave));
+    if (p == nullptr)
+    {
+        cout<<"No se encontra el Vendedor: "<<endl;
+        return nullptr;
+    }
+    else
+    {
+        return p;
+    }
+}
