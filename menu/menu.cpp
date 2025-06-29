@@ -4,6 +4,7 @@
 #include "PUsuario.h"
 #include "SistemaControlador.h"
 #include "../presentacion/Login.h"
+#include <limits>
 using namespace std;
 
 void Menu()
@@ -17,6 +18,7 @@ void Menu()
 
     while(option!=12)
     {
+
         cout<<endl;
         cout<<"1)Alta Usuario"<<endl;
         cout<<"2)Listado de usuarios"<<endl;
@@ -44,6 +46,7 @@ void Menu()
 
         case 3:
             producto->altaProduto();
+
             break;
         }
     }

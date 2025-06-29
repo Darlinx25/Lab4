@@ -4,6 +4,7 @@
 #include <set>
 #include <string>
 #include "DTUsuario.h"
+#include "DTProducto.h"
 using namespace std;
 //Interface del Sistema
 //Como este ejemplo es muy sencillo, solo tengo una interface del sistema
@@ -13,6 +14,7 @@ public:
     virtual set<DTUsuario*> listarUsuarios()=0;
     virtual string altaUsuario(DTUsuario * usu)=0;
     virtual set<DTUsuario*>  listarVendedores()=0;
+    virtual string altaProducto(DTProducto * p,string vendedor)=0;
 
 };
 #endif /* LOGICA_ILOGIN_H_ */

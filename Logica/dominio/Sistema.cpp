@@ -8,15 +8,20 @@
 #include "Vendedor.h"
 #include "../../ICollection/collections/OrderedDictionary.h"
 #include "../../ICollection/String.h"
+#include "Producto.h"
 
 
 Sistema::Sistema() {
 
     this->usuarios = new OrderedDictionary();
+    this->productos = new OrderedDictionary();
+
     Usuario * c = new Cliente("faxcundo", "fax", new DTFecha(13,07,2003), new DTDomicilio("Maldonado","Uruguay"));
     Usuario * v = new Vendedor("kevin","kev",new DTFecha(04,05,2001),2133668);
     this->usuarios->add(new String(c->getNick().c_str()),c);
     this->usuarios->add(new String(v->getNick().c_str()),v);
+    Producto * p = new Producto("A27","Arroz",56,2,"Blanco",true ,otros,dynamic_cast<Vendedor*>(v));
+    this->productos->add(new String(p->getCodigo().c_str()),p);
 }
 
 
@@ -108,5 +113,48 @@ set<DTUsuario*> Sistema::listarVendedores()
     }
     delete it;
     return resultado;
+
+}
+
+string Sistema::altaProducto(DTProducto * p,string vendedor)
+{
+    string resultado = "Producto Ingresado Correctamente";
+    IIterator * it = this->usuarios->getIterator();
+    Usuario* u;
+    while(it->hasCurrent()) {
+        ICollectible * c = it->getCurrent();
+        u = dynamic_cast<Vendedor*>(c);
+        if (u != nullptr && u->getNick() == vendedor) {
+            break;
+        }
+        it->next();
+    }
+    delete it;
+    it = this->productos->getIterator();
+    while(it->hasCurrent()) {
+        ICollectible * c = it->getCurrent();
+        Producto * l = dynamic_cast<Producto*>(c);
+        if (l != nullptr && l->getCodigo() == p->getCodigo()) {
+            resultado = "Producto ya existe";
+
+            break;
+        }
+        it->next();
+    }
+
+
+
+
+    if (resultado != "Producto ya existe") {
+
+            Producto * c = new Producto( p->getCodigo(),p->getNombre(),p->getPrecio(),p->getStock(),p->getDescripcion(),p->getDisponible(),p->getCategoria(),u);
+            this->productos->add(new String(p->getCodigo().c_str()), c);
+    }
+    //LLAMAR FUNCION QUE AGREGE PRODUCTO A LA LISTA DE PRODCUTOS DEL VENDEDOR
+    delete it;
+    return resultado;
+
+
+
 
 }

@@ -5,21 +5,32 @@
 #ifndef DTPRODUCTO_H
 #define DTPRODUCTO_H
 #include <string>
-#include "DTCategoria.h"
+#include "DTVendedor.h"
 using namespace std;
 enum Categoria {ropa=1, electrodomesticos=2,otros=3};
 class DTProducto {
 private:
-    int codigo;
+    string codigo;
     string nombre;
     float precio;
     int stock;
     string descripcion;
-    bool Disponible;
+    bool disponible;
     Categoria categoria;
 
+
 public:
-    DTProducto(int,string,float,int,string,bool,Categoria);
+    DTProducto(string,string,float,int,string,bool,Categoria);
+    ~DTProducto();
+    string getCodigo();
+    string getNombre();
+    float getPrecio();
+    int getStock();
+    string getDescripcion();
+    bool getDisponible();
+    Categoria getCategoria();
+
+
 
 };
 

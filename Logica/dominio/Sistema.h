@@ -1,21 +1,24 @@
 #ifndef LOGICA_SISTEMA_H_
 #define LOGICA_SISTEMA_H_
-#include <list>
 #include "Usuario.h"
 #include "DTUsuario.h"
 #include "../../ICollection/interfaces/IDictionary.h"
+#include "DTProducto.h"
+#include <string>
 
 using namespace std;
 class Sistema {
 private:
 
     IDictionary * usuarios;
+    IDictionary * productos;
 public:
     Sistema();
     virtual ~Sistema();
     string ingresar(string nick, string pass);
     set<DTUsuario*> listarUsuarios();
-    virtual string altaUsuario(DTUsuario * usu);
+    string altaUsuario(DTUsuario * usu);
     set<DTUsuario*> listarVendedores();
+    string altaProducto(DTProducto * p,string vendedor);
 };
 #endif /* LOGICA_SISTEMA_H_ */
