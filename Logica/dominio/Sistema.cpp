@@ -15,6 +15,7 @@ Sistema::Sistema() {
 
     this->usuarios = new OrderedDictionary();
     this->productos = new OrderedDictionary();
+    this->promocion = new OrderedDictionary();
 
     Usuario * c = new Cliente("faxcundo", "fax", new DTFecha(13,07,2003), new DTDomicilio("Maldonado","Uruguay"));
     Usuario * v = new Vendedor("kevin","kev",new DTFecha(04,05,2001),2133668);

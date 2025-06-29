@@ -5,10 +5,12 @@
 #include "DTProducto.h"
 #include "Vendedor.h"
 #include "../../ICollection/interfaces/ICollectible.h"
+#include "Requiere.h"
+#include <list>
 using namespace std;
 class DTProducto;
 
-class Producto:public ICollectible{
+class Producto:public ICollectible {
 private:
     string codigo;
     string nombre;
@@ -18,7 +20,7 @@ private:
     bool disponible;
     Usuario * vendedor;
     string categoria;
-
+    Requiere * requiere;
 
 public:
     Producto(string codigo,string nombre,float precio,int stock,string descripcin ,bool disponible , string categoria, Usuario * v);

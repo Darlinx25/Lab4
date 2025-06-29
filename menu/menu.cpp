@@ -5,6 +5,8 @@
 #include "SistemaControlador.h"
 #include "../presentacion/Login.h"
 #include <limits>
+
+#include "PPromocion.h"
 using namespace std;
 
 void Menu()
@@ -15,6 +17,7 @@ void Menu()
     PUsuario * usuario= new PUsuario(isistema);
     log->pedirCredenciales();
     PProducto* producto= new PProducto(isistema);
+    PPromocion* promocion = new PPromocion(isistema);
 
     while(option!=12)
     {

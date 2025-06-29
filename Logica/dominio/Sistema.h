@@ -12,6 +12,7 @@ private:
 
     IDictionary * usuarios;
     IDictionary * productos;
+    IDictionary * promocion;
 public:
     Sistema();
     virtual ~Sistema();
