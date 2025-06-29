@@ -16,6 +16,7 @@ public:
     virtual set<DTUsuario*> listarVendedores();
     virtual string altaProducto(DTProducto * p,string vendedor);
     virtual set<DTProducto*> listarProductos();
+    virtual DTProducto * seleccionarProducto(string codigo);
 };
 
 #endif /* LOGICA_CONTROLADOR_SISTEMACONTROLADOR_H_ */

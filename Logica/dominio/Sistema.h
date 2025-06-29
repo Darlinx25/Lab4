@@ -22,5 +22,6 @@ public:
     string altaProducto(DTProducto * p,string vendedor);
     set<DTProducto*> listarProductos();
     void agregarProductoConVendedor(DTProducto * p, string nickVendedor);
+    DTProducto * seleccionarProducto(string codigo);
 };
 #endif /* LOGICA_SISTEMA_H_ */

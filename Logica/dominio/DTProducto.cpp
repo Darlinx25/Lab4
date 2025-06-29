@@ -50,12 +50,7 @@ string DTProducto::getCategoria() {
 }
 
 ostream& operator<<(std::ostream& os, DTProducto& u) {
-    os << "codigo: " << u.getCodigo() << "\n"
-       << "nombre: " << u.getNombre() << "\n"
-       << "precio: " << u.getPrecio() << "\n"
-       << "stock: " << u.getStock() << "\n"
-       << "Descripcion: " << u.getDescripcion() << "\n"
-       << "Disponible: " << (u.getDisponible() ? "Sí" : "No") << "\n"
-       << "Categoria: " << u.getCategoria();
+    os << "Codigo: " << u.getCodigo() << "\n"
+       << "Nombre: " << u.getNombre() << "\n";
     return os;
 }

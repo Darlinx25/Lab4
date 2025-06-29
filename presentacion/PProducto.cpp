@@ -88,3 +88,18 @@ void PProducto::listarProductos()
         cout << *dt << endl <<endl;;
     }
 }
+
+void PProducto::datosProducto()
+{
+    this->listarProductos();
+    string cod;
+    cout<<"Ingrese el codigo del producto: "<<endl;
+    cin>>cod;
+    DTProducto * dt = this->isistema->seleccionarProducto(cod);//hacer una funcion que devuelva el DTProducto en base a un codigo
+    if (dt != nullptr)
+    {
+        cout<<dt->getPrecio()<<endl<<dt->getStock()<<endl<<dt->getDescripcion()<<endl<<dt->getCategoria()<<endl;
+    }
+
+
+}

@@ -46,10 +46,20 @@ void Menu()
 
         case 3:
             producto->altaProduto();
-                cout<<endl<<"Todos los productos en el sistema: "<<endl;
-            producto->listarProductos();
+
+
 
             break;
+        case 4:
+            producto->datosProducto();
+
+
+            break;
+        case 5:
+            break;
+        case 6:
+            break;
+
         }
     }
 

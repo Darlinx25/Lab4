@@ -172,7 +172,7 @@ set<DTProducto*> Sistema::listarProductos() {
     while(it->hasCurrent()){
         ICollectible * e = it->getCurrent();
         Producto * u = dynamic_cast<Producto*>(e);
-        resultado.insert(u->getDT()); // Polimórfico: Cliente/Vendedor devuelven su propio DT
+        resultado.insert(u->getDT());
         it->next();
     }
     delete it;
@@ -180,6 +180,25 @@ set<DTProducto*> Sistema::listarProductos() {
 
 
 }
+
+DTProducto* Sistema::seleccionarProducto(string codigo)
+{
+    String* clave = new String(codigo.c_str());
+    Producto * p = dynamic_cast<Producto*>(this->productos->find(clave));
+    if (p == nullptr)
+    {
+        cout<<"No se encontra el producto: "<<endl;
+        return nullptr;
+    }
+    else
+    {
+        return p->getDT();;
+    }
+
+
+
+}
+
 
 void Sistema::agregarProductoConVendedor(DTProducto* p, string nick) {
     String* clave = new String(nick.c_str());
@@ -191,5 +210,6 @@ void Sistema::agregarProductoConVendedor(DTProducto* p, string nick) {
             v->agregarProducto(nuevo);
         }
     }
+    delete claveProd;
     delete clave;
 }

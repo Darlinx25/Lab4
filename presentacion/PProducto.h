@@ -13,6 +13,7 @@ public:
     ~PProducto();
     void altaProduto();
     void listarProductos();
+    void datosProducto();
 
 };
 
