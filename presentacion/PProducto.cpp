@@ -100,7 +100,7 @@ void PProducto::datosProducto()
     DTProducto * dt = this->isistema->seleccionarProducto(cod);//hacer una funcion que devuelva el DTProducto en base a un codigo
     if (dt != nullptr)
     {
-        cout<<"precio: "<<dt->getPrecio()<<endl<<"precio: "<<dt->getStock()<<endl<<"Descripcion: "<<dt->getDescripcion()<<endl<<"Categoria: "<<dt->getCategoria()<<endl<<"nombre del Vendedor: "<<dt->nombreVendedor()<<endl;
+        cout<<"precio: "<<dt->getPrecio()<<endl<<"stock: "<<dt->getStock()<<endl<<"Descripcion: "<<dt->getDescripcion()<<endl<<"Categoria: "<<dt->getCategoria()<<endl<<"nombre del Vendedor: "<<dt->nombreVendedor()<<endl;
     }
 
 
