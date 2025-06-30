@@ -24,6 +24,7 @@ PPromocion::~PPromocion() {
 void PPromocion::altaPromocion() {
     DTPromocion * promocion;
 
+    //Pedazo 1
     cout<<"Ingrese el nombre"<<endl;
     string nombre;
     cin>>nombre;
@@ -43,4 +44,40 @@ void PPromocion::altaPromocion() {
         cout << *dt << endl;
     }
 
+    cout<<"Ingrese el nombre del Vendedor responsable de la promocion"<<endl;
+    string nomVend;
+    cin>>nomVend;
+
+    /*set<DTProducto*> productos = this->isistema->seleccionarVendedor(nomVend, codigo);
+
+    for (DTProducto* dt : productos) {
+        cout << *dt << endl;
+    }*/
+
+    int opcion;
+
+    while (opcion !=0) {
+
+        cout<<"Quiere ingresar un producto a la promocion?"<<endl;
+        cout<<"1) Si"<<endl;
+        cout<<"0) No"<<endl;
+        cin>>opcion;
+
+        if (opcion == 1) {
+            cout<<"Ingrese el codigo del producto"<<endl;
+            int codProd;
+            cin>>codProd;
+
+            cout<<"Ingrese la cantidad minima"<<endl;
+            int cantMin;
+            cin>>cantMin;
+
+            cout<<"Ingrese el descuento que aplica"<<endl;
+            float descuento;
+            cin>>descuento;
+
+            //this->isistema->agregarProducto(nomVend, codProd, cantMin, descuento, codigo);
+        break;
+        }
+    }
 }

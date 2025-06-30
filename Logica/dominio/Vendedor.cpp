@@ -13,6 +13,7 @@ Vendedor::Vendedor(string nick, string pass, DTFecha * fechaNac, int RUT) {
     this->fechaNac=fechaNac;
     this->RUT=RUT;
     this->ListProd = new OrderedDictionary();
+    this->ListPromo = new OrderedDictionary();
 }
 
 Vendedor::~Vendedor() {
@@ -33,6 +34,11 @@ void Vendedor::agregarProducto(Producto * p) {
 
 }
 
+void Vendedor::agregarPromocion(Promocion *pro) {
+    this->ListPromo->add(new Integer(pro->getCodigo()), pro);
+}
+
+
 void Vendedor::mostrarProductos() {
     IIterator* it = this->ListProd->getIterator();
     while (it->hasCurrent()) {
@@ -47,3 +53,22 @@ void Vendedor::mostrarProductos() {
     }
     delete it;
 }
+
+/*
+ *set<DTProducto*> Vendedor::obtenerProductosdeVendedor() {
+    IIterator* it = this->ListProd->getIterator();
+    set<DTProducto*> prods;
+    while (it->hasCurrent()) {
+        ICollectible* obj = it->getCurrent();
+        Producto* prod = dynamic_cast<Producto*>(obj);
+        if (prod != nullptr) {
+            DTProducto* dt = prod->getDT();
+            prods.insert(dt);
+            delete dt;
+        }
+        it->next();
+    }
+    delete it;
+    return prods;
+}*/
+

@@ -52,6 +52,17 @@ Usuario *SistemaControlador::obtenerVendedor(string codigo) {
 
 set<DTUsuario*> SistemaControlador::altaPromocion(DTPromocion * p) {
     return this->sistema->altaPromocion(p);
+}
 
+/*set<DTProducto*> SistemaControlador::seleccionarVendedor(string nickVendedor, int codPromocion) {
+    return this->sistema->seleccionarVendedor(nickVendedor, codPromocion);
 
+}*/
+
+Promocion* SistemaControlador::obtenerPromocion(int cod) {
+    return this->sistema->obtenerPromocion(cod);
+}
+
+void SistemaControlador::agregarProducto(string nomVend, int codProd, int cantMin, float descuento, int codigo) {
+    this->sistema->agregarProducto(nomVend, codProd, cantMin, descuento, codigo);
 }

@@ -8,6 +8,7 @@
 #include "Vendedor.h"
 #include "../../ICollection/collections/OrderedDictionary.h"
 #include "../../ICollection/String.h"
+#include "../../ICollection/Integer.h"
 #include "Producto.h"
 
 
@@ -195,11 +196,7 @@ DTProducto* Sistema::seleccionarProducto(string codigo)
     {
         return p->getDT();;
     }
-
-
-
 }
-
 
 void Sistema::agregarProductoConVendedor(DTProducto* p, string nick) {
     String* clave = new String(nick.c_str());
@@ -243,5 +240,47 @@ set<DTUsuario*> Sistema::altaPromocion(DTPromocion * p) {
      */
 
     return resultado; /*4*/
+
+}
+
+Promocion* Sistema::obtenerPromocion(int cod) {
+
+    Integer * clave = new Integer(cod);
+    Promocion * pro = dynamic_cast<Promocion*>(this->promocion->find(clave));
+
+    if (pro == nullptr) {
+        cout<<"No se encontro la promocion"<<endl;
+        return nullptr;
+    }
+    else {
+        return pro;
+    }
+}
+
+/*set<DTProducto*> Sistema::seleccionarVendedor(string nomVend, int codigo) {
+
+    Vendedor * vender = dynamic_cast<Vendedor*>(obtenerVendedor(nomVend));
+    Promocion * promo = obtenerPromocion(codigo);
+
+    promo->setVendedor(vender->getDT());
+
+    set<DTProducto*> prods;
+
+    return prods; /*prods = vender->obtenerProductosdeVendedor();*/
+//}
+
+void Sistema::agregarProducto(string nomVend, int codProd, int cantMin, float descuento, int codigo) {
+
+    IIterator * it = this->promocion->getIterator();
+
+    while (it->hasCurrent()) {
+        ICollectible * e = it->getCurrent();
+        Promocion * promo = dynamic_cast<Promocion *>(e);
+
+        if (promo->getVigente() == true) {
+
+        }
+
+    }
 
 }

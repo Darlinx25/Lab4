@@ -27,5 +27,8 @@ public:
     DTProducto * seleccionarProducto(string codigo);
     Usuario * obtenerVendedor(string codigo);
     set<DTUsuario*> altaPromocion(DTPromocion * p);
+    set<DTProducto*> seleccionarVendedor(string nomVend, int codigo);
+    Promocion* obtenerPromocion(int cod);
+    void agregarProducto(string nomVend, int codProd, int cantMin, float descuento, int codigo);
 };
 #endif /* LOGICA_SISTEMA_H_ */

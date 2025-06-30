@@ -5,16 +5,15 @@
 #ifndef REQUIERE_H
 #define REQUIERE_H
 
-
+#include "DTRequiere.h"
 
 class Requiere {
     private:
     int cantMinParaOferta;
     float descuento;
     public:
-
+    Requiere(int cantMinParaOferta, float descuento);
+    DTRequiere* getDT();
 };
-
-
 
 #endif //REQUIERE_H

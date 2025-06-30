@@ -3,3 +3,7 @@
 //
 
 #include "Requiere.h"
+
+DTRequiere* Requiere::getDT() {
+    return new DTRequiere(this->descuento, this->cantMinParaOferta);
+}

@@ -46,6 +46,8 @@ add_executable(Lab4 ${SOURCE_FILES}
         Logica/dominio/DTPromocion.h
         Logica/dominio/Requiere.cpp
         Logica/dominio/Requiere.h
+        Logica/dominio/DTRequiere.cpp
+        Logica/dominio/DTRequiere.h
 
 )
 

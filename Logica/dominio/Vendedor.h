@@ -7,19 +7,24 @@
 #include <iostream>
 #include "Usuario.h"
 #include "Producto.h"
+#include "Promocion.h"
 #include "../../ICollection/interfaces/IDictionary.h"
 using namespace std;
 class Producto;
 class Vendedor:public Usuario {
 private:
     int RUT;
-        IDictionary * ListProd;
+    IDictionary * ListProd;
+    IDictionary * ListPromo;
+
 public:
     Vendedor(string nick, string pass, DTFecha * fechaNac, int RUT);
     ~Vendedor();
     DTUsuario * getDT();
     void agregarProducto(Producto * p);
+    void agregarPromocion(Promocion * pro);
     void mostrarProductos();
+    /*set<DTProducto*> obtenerProductosdeVendedor();*/
 
 };
 #endif //VENDEDOR_H

@@ -56,8 +56,12 @@ void Promocion::setVigente(bool vigente) {
 }
 
 
-DTPromocion * Promocion::getDT() {
+DTPromocion* Promocion::getDT() {
 
     return new DTPromocion(this->nombre, this->codigo, this->vigente);
 
+}
+
+void Promocion::setVendedor(DTUsuario * vendedor) {
+    this->vendedor = vendedor;
 }
